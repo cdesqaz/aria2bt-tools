@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # --------------------------------------------------------------
@@ -10,8 +10,7 @@
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
-# Compatible with Python 2.x and Python 3.x                    |
-# Python 3.x recommended                                       |
+# Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
 version="0.8-alpha"
 
@@ -19,6 +18,14 @@ version="0.8-alpha"
 import os
 import argparse
 import platform
+import sys
+
+#Check if your system use Python 3.x
+if sys.version_info<(3,0):
+	print ("")
+	print ("You need python 3.x to run this program.")
+	print ("")
+	exit(1)
 
 #Function to clear screen
 def ClearScreen():
@@ -170,9 +177,9 @@ while MainMenu <= 2:
 	print (" * CA-Certificate: "+CaCertificate+" ("+CaCertificateFile+")")
 	print (" * File allocation: "+FileAllocation)
 	print ("")
-	InputMenu=input("- run(1) | list(2) | magnet(3) | urls(4) | quit(5): ")
- #Compatibility with Python2.x
-	if InputMenu == 1 or InputMenu == "r" or InputMenu == "1":
+	InputMenu=input("- run(r) | list(l) | magnet(m) | urls(u) | quit(q): ")
+ #Options from InputMenu variable
+	if InputMenu == "r" or InputMenu == "1":
 		ClearScreen()
 		print ("")
 		print ("Running aria2c....")
@@ -191,7 +198,7 @@ while MainMenu <= 2:
 			print ("Press ENTER to exit")
 			PauseScreen()
 			print ("Exiting...")
-	elif InputMenu == 2 or InputMenu == "l" or InputMenu == "2":
+	elif InputMenu == "l" or InputMenu == "2":
 		ClearScreen()
 		print ("")
 		print ("* List of torrents that will be loaded:")
@@ -211,7 +218,7 @@ while MainMenu <= 2:
 		print ("Press ENTER to exit")
 		PauseScreen()
 		print ("Exiting...")
-	elif InputMenu == 3 or InputMenu == "m" or InputMenu == "3":
+	elif InputMenu == "m" or InputMenu == "3":
 		ClearScreen()
 		print ("")
 		print ("* Make torrent file from Magnet-link")
@@ -223,7 +230,7 @@ while MainMenu <= 2:
 		print ("Press ENTER to exit")
 		PauseScreen()
 		print ("Exiting...")
-	elif InputMenu == 4 or InputMenu == "u" or InputMenu == "4":
+	elif InputMenu == "u" or InputMenu == "4":
 		os.chdir(TorrentFiles)
 		if os.path.isfile("urls.txt"):
 			print (TorrentFiles+"/urls.txt exists")
@@ -242,7 +249,7 @@ while MainMenu <= 2:
 		elif os.name == "nt":
 			os.system("type urls.txt")
 		print ("")
-		LoadUrls=input("- Load URLs? [yes(1)/no(2)]: ")
+		LoadUrls=input("- Load URLs? (y/n): ")
 		if LoadUrls == 1 or InputMenu == "y" or InputMenu == "1":
 			ClearScreen()
 			print ("")
@@ -254,7 +261,7 @@ while MainMenu <= 2:
 		else:
 			print ("")
 			print ("Exiting...")
-	elif InputMenu == 5 or InputMenu == "q" or InputMenu == "5":
+	elif InputMenu == "q" or InputMenu == "5":
 		print ("")
 		print ("Exiting...")
 		MainMenu += 2

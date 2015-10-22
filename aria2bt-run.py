@@ -10,8 +10,7 @@
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
-# Compatible with Python 2.x and Python 3.x                        |
-# Python 3.x recommended                                           |
+# Compatible with Python 3.x                                       |
 # ------------------------------------------------------------------
 version="0.8-alpha"
 
@@ -19,6 +18,14 @@ version="0.8-alpha"
 import os
 import argparse
 import platform
+import sys
+
+#Check if your system use Python 3.x
+if sys.version_info<(3,0):
+	print ("")
+	print ("You need python 3.x to run this program.")
+	print ("")
+	exit(1)
 
 #Function to clear screen
 def ClearScreen():
