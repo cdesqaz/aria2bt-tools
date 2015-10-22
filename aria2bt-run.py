@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # ------------------------------------------------------------------
@@ -12,7 +12,7 @@
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
 # Compatible with Python 3.x                                       |
 # ------------------------------------------------------------------
-version="0.8-alpha"
+version="0.8.1-alpha"
 
 #Import python-modules
 import os

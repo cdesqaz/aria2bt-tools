@@ -12,7 +12,7 @@
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
 # Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
-version="0.8-alpha"
+version="0.8.1-alpha"
 
 #Import python-modules
 import os
@@ -250,12 +250,12 @@ while MainMenu <= 2:
 			os.system("type urls.txt")
 		print ("")
 		LoadUrls=input("- Load URLs? (y/n): ")
-		if LoadUrls == 1 or InputMenu == "y" or InputMenu == "1":
+		if LoadUrls == "y":
 			ClearScreen()
 			print ("")
 			print ("Running aria2c....")
 			os.system("aria2c "+OtherOptions+" -i urls.txt "+AllOptions+" -d "+TorrentFolder)
-		elif LoadUrls == 2 or InputMenu == "n" or InputMenu == "2":
+		elif LoadUrls == "n":
 			print ("")
 			print ("Exiting...")
 		else:
