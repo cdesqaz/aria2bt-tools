@@ -1,0 +1,16 @@
+###################################################################
+# Installing aria2bt-tools (Mac OS X)                             #
+###################################################################
+
+PREFIX=/usr
+
+install:
+	cp aria2bt-main.py $(PREFIX)/bin
+	cp aria2bt-run.py $(PREFIX)/bin
+	chmod +x $(PREFIX)/bin/aria2bt-main.py
+	chmod +x $(PREFIX)/bin/aria2bt-run.py
+	
+uninstall:
+	rm $(PREFIX)/bin/aria2bt-main.py
+	rm $(PREFIX)/bin/aria2bt-run.py
+
