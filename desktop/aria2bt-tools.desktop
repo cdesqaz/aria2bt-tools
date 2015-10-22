@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=aria2 BitTorrent
+Name[es]=aria2 BitTorrent
+GenericName=aria2 BitTorrent
+GenericName[es]=aria2 BitTorrent
+X-GNOME-FullName=aria2 BitTorrent
+X-GNOME-FullName[es]=aria2 BitTorrent
+Comment=Download and share files over BitTorrent
+Comment[es]=Descargue y comparta archivos mediante BitTorrent
+Exec=aria2bt-main.py
+Icon=/usr/share/icons/aria2.png
+Terminal=true
+Type=Application
+StartupNotify=true
+Categories=Network;FileTransfer;P2P;GTK;
