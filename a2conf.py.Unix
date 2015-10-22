@@ -1,0 +1,18 @@
+#EXAMPLE OF VALID CONFIGURATION FILE FOR UNIX SYSTEMS
+
+TorrentFolder="/opt/Torrent" # Edit the path (Paths without spaces)
+TorrentFiles="/opt/Torrent/Files" # Edit the path (Paths without spaces)
+CaCertificateFile="/etc/ssl/certs/ca-certificates.crt" # Edit the path (Paths without spaces)
+MaxSpeedDownload="300K"
+MaxSpeedUpload="5K"
+BtMaxPeers="25"
+MaxDownloads="25"
+Encryptation="yes"
+Rpc="yes"
+RpcPort="6802"
+Seeding="yes"
+SeedRatio="0.0"
+aria2Debug="no"
+DebugLevel="info"
+FileAllocation="none"
+CaCertificate="no"
