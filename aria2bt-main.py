@@ -12,12 +12,11 @@
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
 # Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
-version="0.8.1-alpha"
+version="0.8.2-alpha"
 
 #Import python-modules
+import subprocess
 import os
-import argparse
-import platform
 import sys
 
 #Check if your system use Python 3.x
@@ -135,20 +134,21 @@ elif aria2debug == "yes":
 	AllOptions=TorrentOptions+" "+SpeedOptions+" "+PeerOptions+" "+RpcOptions+" "+SeedOptions+" --console-log-level="+DebugLevel
 
 #Check if aria2 is installed
-try:
-	if os.name == "posix":
-		os.system("aria2c -h > /dev/null")
-	elif os.name == "nt":
-		os.system("aria2c -h > null")
-		os.system("del null")
-except (RuntimeError, TypeError, NameError):
-    print ("")
-    print ("Error: 'aria2' is not installed!")
-    print ("")
-    print ("Builds:")
-    print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
-    print ("  * https://github.com/tatsuhiro-t/aria2/releases")
-    print ("")
+from subprocess import PIPE, Popen
+aria2Check = Popen(['aria2c', '-v'], stdout=PIPE, stderr=PIPE)
+ErrorFound = aria2Check.stderr.read()
+aria2Check.stderr.close()
+
+if not ErrorFound:
+	print ("aria2 detected")
+else:
+	print ("")
+	print ("Error: 'aria2' is not installed!")
+	print ("")
+	print ("Builds:")
+	print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
+	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
+	print ("")
 
 #Show main menu
 MainMenu = 1
