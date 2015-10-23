@@ -1,0 +1,44 @@
+aria2 python scripts for BitTorrent downloads
+=============================================
+
+HOW TO INSTALL
+--------------
+
+ * Unix systems (GNU/Linux,*BSD, etc..)
+ ======================================
+
+   - Open the terminal and type the following comands:
+   
+     $ git clone https://github.com/clamsawd/aria2bt-tools
+     $ cd aria2bt-tools
+     # make
+     $ mkdir $HOME/.aria2/
+     $ cp a2conf.py.Unix $HOME/.aria2/a2conf.py
+     
+   Note: You must install git previously.
+
+ * Mac OS X
+ ==========
+ 
+     - Open the terminal and type the following comands:
+     
+     $ git clone https://github.com/clamsawd/aria2bt-tools
+     $ cd aria2bt-tools
+     # make -f makefile.osx
+     $ mkdir $HOME/.aria2/
+     $ cp a2conf.py.Unix $HOME/.aria2/a2conf.py
+     
+   Note: You must install git previously.
+     
+ * Windows
+ =========
+ 
+      - Install Python 3.x from https://www.python.org/.
+      - Download https://github.com/clamsawd/aria2bt-tools/archive/master.zip
+      - Unzip the package in your system. For example in C:\Program Files\.
+      - Add the folder to PATH variable.
+      - Copy 'a2conf.py.Windows' to %USERPROFILE%\.aria2\a2conf.py:
+      
+       C:\PATH\> mkdir %USERPROFILE%\.aria2
+       C:\PATH\> rename a2conf.py.Windows a2conf.py
+       C:\PATH\> copy /Y a2conf.py %USERPROFILE%\.aria2
