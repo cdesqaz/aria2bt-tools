@@ -6,13 +6,13 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 22-10-2015                                          |
+# Last update: 23-10-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
 # Compatible with Python 3.x                                       |
 # ------------------------------------------------------------------
-version="0.8.2-alpha"
+version="0.9-beta"
 
 #Import python-modules
 import subprocess
@@ -153,7 +153,7 @@ else:
 #Run aria2c
 ClearScreen()
 print ("")
-print ("Running aria2c....")
+print ("Running aria2c.... (Ctrl + C to stop)")
 if os.name == "posix":
 	os.system("aria2c "+OtherOptions+" "+TorrentFiles+"/*.torrent "+AllOptions+" -d "+TorrentFolder)
 	print ("")

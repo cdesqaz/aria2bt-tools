@@ -6,13 +6,13 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 22-10-2015                                      |
+# Last update: 23-10-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
 # Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
-version="0.8.2-alpha"
+version="0.9-beta"
 
 #Import python-modules
 import subprocess
@@ -182,11 +182,11 @@ while MainMenu <= 2:
 	if InputMenu == "r" or InputMenu == "1":
 		ClearScreen()
 		print ("")
-		print ("Running aria2c....")
+		print ("Running aria2c.... (Ctrl + C to stop)")
 		if os.name == "posix":
 			os.system("aria2c "+OtherOptions+" "+TorrentFiles+"/*.torrent "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			print ("Press ENTER to exit")
+			print ("Press ENTER to return")
 			PauseScreen()
 			print ("Exiting...")
 		elif os.name == "nt":
@@ -195,7 +195,7 @@ while MainMenu <= 2:
 			os.system('dir /B | find ".torrent" > aria2-list.txt')
 			os.system("aria2c "+OtherOptions+" -i aria2-list.txt "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			print ("Press ENTER to exit")
+			print ("Press ENTER to return")
 			PauseScreen()
 			print ("Exiting...")
 	elif InputMenu == "l" or InputMenu == "2":
@@ -215,7 +215,7 @@ while MainMenu <= 2:
 		elif os.name == "nt":
 			os.system('dir /B '+TorrentFolder+' | find ".aria2"')
 		print ("")
-		print ("Press ENTER to exit")
+		print ("Press ENTER to return")
 		PauseScreen()
 		print ("Exiting...")
 	elif InputMenu == "m" or InputMenu == "3":
@@ -227,7 +227,7 @@ while MainMenu <= 2:
 		print ("")
 		os.system("aria2c --bt-metadata-only=true --bt-save-metadata=true -d "+TorrentFiles+" "+MagnetLink)
 		print ("")
-		print ("Press ENTER to exit")
+		print ("Press ENTER to return")
 		PauseScreen()
 		print ("Exiting...")
 	elif InputMenu == "u" or InputMenu == "4":
@@ -253,8 +253,11 @@ while MainMenu <= 2:
 		if LoadUrls == "y":
 			ClearScreen()
 			print ("")
-			print ("Running aria2c....")
+			print ("Running aria2c.... (Ctrl + C to stop)")
 			os.system("aria2c "+OtherOptions+" -i urls.txt "+AllOptions+" -d "+TorrentFolder)
+			print ("")
+			print ("Press ENTER to return")
+			PauseScreen()
 		elif LoadUrls == "n":
 			print ("")
 			print ("Exiting...")
@@ -265,3 +268,10 @@ while MainMenu <= 2:
 		print ("")
 		print ("Exiting...")
 		MainMenu += 2
+	else:
+		ClearScreen()
+		print ("")
+		print ("Invalid Option")
+		print ("")
+		print ("Press ENTER to return")
+		PauseScreen()
