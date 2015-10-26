@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 23-10-2015                                      |
+# Last update: 26-10-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
@@ -242,12 +242,16 @@ while MainMenu <= 2:
 			urlsfile.close()
 		ClearScreen()
 		print ("")
-		print ("* List URLs ("+TorrentFiles+"/urls.txt):")
+		if os.name == "posix":
+			print ("* List URLs ("+TorrentFiles+"/urls.txt):")
+		elif os.name == "nt":
+			print ("* List URLs ("+TorrentFiles+"\\urls.txt):")
 		print ("")
 		if os.name == "posix":
 			os.system("cat urls.txt")
 		elif os.name == "nt":
 			os.system("type urls.txt")
+			print ("")
 		print ("")
 		LoadUrls=input("- Load URLs? (y/n): ")
 		if LoadUrls == "y":
