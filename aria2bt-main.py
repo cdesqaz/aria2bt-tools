@@ -136,7 +136,7 @@ elif aria2debug == "yes":
 #Check if aria2 is installed
 from subprocess import PIPE, Popen
 try:
-	aria2Check = Popen(['aria2c2', '-v'], stdout=PIPE, stderr=PIPE)
+	aria2Check = Popen(['aria2c', '-v'], stdout=PIPE, stderr=PIPE)
 	aria2Check.stderr.close()
 except:
 	ClearScreen()
@@ -221,6 +221,7 @@ while MainMenu <= 2:
 		print ("Exiting...")
 	elif InputMenu == "m" or InputMenu == "3":
 		ClearScreen()
+		os.chdir(TorrentFiles)
 		print ("")
 		print ("* Make torrent file from Magnet-link")
 		print ("")
