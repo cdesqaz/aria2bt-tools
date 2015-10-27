@@ -1,6 +1,13 @@
 aria2 python scripts for BitTorrent downloads
 =============================================
 
+TOOLS
+-----
+
+* aria2bt-main.py: Tool for managing BitTorrent downloads, Magnets & URLs.
+* aria2bt-run.py: Tool to run BitTorrent downloads as daemon.
+* aria2bt-config.py: Tool to create a valid configuration file.
+
 HOW TO INSTALL
 --------------
 
@@ -15,7 +22,7 @@ HOW TO INSTALL
      $ mkdir $HOME/.aria2/
      $ cp a2conf.py.Unix $HOME/.aria2/a2conf.py
      
-   Note: You must install git previously.
+   Note: You must install git & aria2 previously.
 
  * Mac OS X
  ==========
@@ -28,7 +35,7 @@ HOW TO INSTALL
      $ mkdir $HOME/.aria2/
      $ cp a2conf.py.Unix $HOME/.aria2/a2conf.py
      
-   Note: You must install git previously.
+   Note: You must install git & aria2 previously.
      
  * Windows
  =========
