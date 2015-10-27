@@ -169,7 +169,7 @@ while MainMenu <= 2:
 	if os.name == "posix":
 		print (" * Torrents directory: "+TorrentFiles+"/*.torrent")
 	elif os.name == "nt":
-		print (" * Torrents directory: "+TorrentFiles+"\*.torrent ("+DiscFiles+")")
+		print (" * Torrents directory: "+TorrentFiles+"\*.torrent")
 	print (" * Download speed: "+MaxSpeedDownload+" | Upload speed: "+MaxSpeedUpload)
 	print (" * Encryption: "+Encryptation+" | RPC: "+Rpc+" (Port: "+RpcPort+")")
 	print (" * Max.peers: "+BtMaxPeers+" | Max.downloads: "+MaxDownloads)
