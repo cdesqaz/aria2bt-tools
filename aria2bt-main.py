@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 26-10-2015                                      |
+# Last update: 27-10-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
@@ -80,7 +80,7 @@ def writearia2btcf():
 	abcf=open('a2conf.py','a')
 	abcf.write('#Default aria2 python-script config\n')
 	abcf.write('\n')
-	abcf.write('DiscFiles="C:" # Only for Windows\n')
+	#abcf.write('DiscFiles="C:" # Only for Windows\n')
 	abcf.write('TorrentFolder="/Torrent" # Edit the path (Paths without spaces)\n')
 	abcf.write('TorrentFiles="/Torrent/Files" # Edit the path (Paths without spaces)\n')
 	abcf.write('CaCertificateFile="/Certs/ca-certificates.crt" # Edit the path (Paths without spaces)\n')
@@ -135,13 +135,11 @@ elif aria2debug == "yes":
 
 #Check if aria2 is installed
 from subprocess import PIPE, Popen
-aria2Check = Popen(['aria2c', '-v'], stdout=PIPE, stderr=PIPE)
-ErrorFound = aria2Check.stderr.read()
-aria2Check.stderr.close()
-
-if not ErrorFound:
-	print ("aria2 detected")
-else:
+try:
+	aria2Check = Popen(['aria2c2', '-v'], stdout=PIPE, stderr=PIPE)
+	aria2Check.stderr.close()
+except:
+	ClearScreen()
 	print ("")
 	print ("Error: 'aria2' is not installed!")
 	print ("")
@@ -149,6 +147,9 @@ else:
 	print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
 	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
 	print ("")
+	print ("Press ENTER to exit")
+	PauseScreen()
+	exit(1)
 
 #Show main menu
 MainMenu = 1
@@ -190,7 +191,7 @@ while MainMenu <= 2:
 			PauseScreen()
 			print ("Exiting...")
 		elif os.name == "nt":
-			os.chdir(DiscFiles)
+			#os.chdir(DiscFiles)
 			os.chdir(TorrentFiles)
 			os.system('dir /B | find ".torrent" > aria2-list.txt')
 			os.system("aria2c "+OtherOptions+" -i aria2-list.txt "+AllOptions+" -d "+TorrentFolder)
