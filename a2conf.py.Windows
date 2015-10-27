@@ -1,6 +1,5 @@
 #EXAMPLE OF VALID CONFIGURATION FILE FOR WINDOWS
 
-DiscFiles="C:" # Only for Windows
 TorrentFolder="C:\TORRENT" # Edit the path (Paths without spaces)
 TorrentFiles="C:\TORRENT\Files" # Edit the path (Paths without spaces)
 CaCertificateFile="C:\Windows\Certs\ca-certificates.crt" # Edit the path (Paths without spaces)
