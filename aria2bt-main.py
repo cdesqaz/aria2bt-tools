@@ -35,13 +35,6 @@ def ClearScreen():
 	else:
 		print ("Error: Unable clear screen")
 
-#Function to pause screen
-def PauseScreen():
-	if os.name == "posix":
-		os.system("read pause")
-	elif os.name == "nt":
-		os.system("pause > nul")
-
 #Detect system & PATH of user folder
 if os.name == "posix":
 	os.chdir(os.environ["HOME"])
@@ -147,8 +140,7 @@ except:
 	print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
 	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
 	print ("")
-	print ("Press ENTER to exit")
-	PauseScreen()
+	PauseExit=input("Press ENTER to exit ")
 	exit(1)
 
 #Show main menu
@@ -187,8 +179,7 @@ while MainMenu <= 2:
 		if os.name == "posix":
 			os.system("aria2c "+OtherOptions+" "+TorrentFiles+"/*.torrent "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			print ("Press ENTER to return")
-			PauseScreen()
+			PauseReturn=input("Press ENTER to return ")
 			print ("Exiting...")
 		elif os.name == "nt":
 			#os.chdir(DiscFiles)
@@ -196,8 +187,7 @@ while MainMenu <= 2:
 			os.system('dir /B | find ".torrent" > aria2-list.txt')
 			os.system("aria2c "+OtherOptions+" -i aria2-list.txt "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			print ("Press ENTER to return")
-			PauseScreen()
+			PauseReturn=input("Press ENTER to return ")
 			print ("Exiting...")
 	elif InputMenu == "l" or InputMenu == "2":
 		ClearScreen()
@@ -216,8 +206,7 @@ while MainMenu <= 2:
 		elif os.name == "nt":
 			os.system('dir /B '+TorrentFolder+' | find ".aria2"')
 		print ("")
-		print ("Press ENTER to return")
-		PauseScreen()
+		PauseReturn=input("Press ENTER to return ")
 		print ("Exiting...")
 	elif InputMenu == "m" or InputMenu == "3":
 		ClearScreen()
@@ -229,8 +218,7 @@ while MainMenu <= 2:
 		print ("")
 		os.system("aria2c --bt-metadata-only=true --bt-save-metadata=true -d "+TorrentFiles+" "+MagnetLink)
 		print ("")
-		print ("Press ENTER to return")
-		PauseScreen()
+		PauseReturn=input("Press ENTER to return ")
 		print ("Exiting...")
 	elif InputMenu == "u" or InputMenu == "4":
 		os.chdir(TorrentFiles)
@@ -262,8 +250,7 @@ while MainMenu <= 2:
 			print ("Running aria2c.... (Ctrl + C to stop)")
 			os.system("aria2c "+OtherOptions+" -i urls.txt "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			print ("Press ENTER to return")
-			PauseScreen()
+			PauseReturn=input("Press ENTER to return ")
 		elif LoadUrls == "n":
 			print ("")
 			print ("Exiting...")
@@ -279,5 +266,4 @@ while MainMenu <= 2:
 		print ("")
 		print ("Invalid Option")
 		print ("")
-		print ("Press ENTER to return")
-		PauseScreen()
+		PauseReturn=input("Press ENTER to return ")

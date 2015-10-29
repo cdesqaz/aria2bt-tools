@@ -35,13 +35,6 @@ def ClearScreen():
 	else:
 		print ("Error: Unable clear screen")
 
-#Function to pause screen
-def PauseScreen():
-	if os.name == "posix":
-		os.system("read pause")
-	elif os.name == "nt":
-		os.system("pause > nul")
-
 #Detect system & PATH of user folder
 if os.name == "posix":
 	os.chdir(os.environ["HOME"])
@@ -147,8 +140,7 @@ except:
 	print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
 	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
 	print ("")
-	print ("Press ENTER to exit")
-	PauseScreen()
+	PauseExit=input("Press ENTER to exit ")
 	exit(1)
 
 #Run aria2c
@@ -158,8 +150,7 @@ print ("Running aria2c.... (Ctrl + C to stop)")
 if os.name == "posix":
 	os.system("aria2c "+OtherOptions+" "+TorrentFiles+"/*.torrent "+AllOptions+" -d "+TorrentFolder)
 	print ("")
-	print ("Press ENTER to exit")
-	PauseScreen()
+	PauseExit=input("Press ENTER to exit ")
 	print ("Exiting...")
 elif os.name == "nt":
 	#os.chdir(DiscFiles)
@@ -167,6 +158,5 @@ elif os.name == "nt":
 	os.system('dir /B | find ".torrent" > aria2-list.txt')
 	os.system("aria2c "+OtherOptions+" -i aria2-list.txt "+AllOptions+" -d "+TorrentFolder)
 	print ("")
-	print ("Press ENTER to exit")
-	PauseScreen()
+	PauseExit=input("Press ENTER to exit ")
 	print ("Exiting...")
