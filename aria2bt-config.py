@@ -173,10 +173,7 @@ print ("- Press ENTER to apply or Ctrl+C to cancel")
 PauseScreen()
 
 #Apply configuration to 'a2conf.py' file
-if os.name == "posix":
-	os.system("rm a2conf.py")
-elif os.name == "nt":
-	os.system("del a2conf.py")
+os.remove("a2conf.py")
 def createaria2btcf():
 	abcf=open('a2conf.py','w')
 	abcf.close()
