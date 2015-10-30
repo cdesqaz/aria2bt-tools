@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 27-10-2015                                          |
+# Last update: 30-10-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
