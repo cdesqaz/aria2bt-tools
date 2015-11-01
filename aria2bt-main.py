@@ -12,7 +12,7 @@
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
 # Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
-version="1.0"
+version="1.0.1"
 
 #Import python-modules
 import subprocess
