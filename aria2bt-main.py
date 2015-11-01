@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 31-10-2015                                      |
+# Last update: 01-11-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
@@ -52,26 +52,23 @@ if os.path.exists(".aria2"):
 	os.chdir(".aria2")
 
 #Check if exists 'aria2.conf'
-def createaria2cf():
-	acf=open('aria2.conf','w')
-	acf.close()
-def writearia2cf():
-	acf=open('aria2.conf','a')
-	acf.write('# sample configuration file of aria2c\n')
-	acf.close()
-
 if os.path.isfile("aria2.conf"):
 	print ("aria2.conf exists")
 else:
 	print ("aria2.conf created")
-	createaria2cf()
-	writearia2cf()
+	acf=open('aria2.conf','w')
+	acf.close()
+	acf=open('aria2.conf','a')
+	acf.write('# sample configuration file of aria2c\n')
+	acf.close()
 
 #Check if exists 'a2conf.py'
-def createaria2btcf():
+if os.path.isfile("a2conf.py"):
+	print ("a2conf.py exists")
+else:
+	print ("a2conf.py created")
 	abcf=open('a2conf.py','w')
 	abcf.close()
-def writearia2btcf():
 	abcf=open('a2conf.py','a')
 	abcf.write('#Default aria2 python-script config\n')
 	abcf.write('\n')
@@ -93,13 +90,6 @@ def writearia2btcf():
 	abcf.write('FileAllocation="none"\n')
 	abcf.write('CaCertificate="no"\n')
 	abcf.close()
-
-if os.path.isfile("a2conf.py"):
-	print ("a2conf.py exists")
-else:
-	print ("a2conf.py created")
-	createaria2btcf()
-	writearia2btcf()
 
 #Import variables from a2conf.py
 exec(open("a2conf.py").read())

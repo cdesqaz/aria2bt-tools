@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 31-10-2015                                          |
+# Last update: 01-11-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
@@ -59,20 +59,15 @@ if os.path.exists(".aria2"):
 	os.chdir(".aria2")
 
 #Check if exists 'aria2.conf'
-def createaria2cf():
-	acf=open('aria2.conf','w')
-	acf.close()
-def writearia2cf():
-	acf=open('aria2.conf','a')
-	acf.write('# sample configuration file of aria2c\n')
-	acf.close()
-
 if os.path.isfile("aria2.conf"):
 	print ("aria2.conf exists")
 else:
 	print ("aria2.conf created")
-	createaria2cf()
-	writearia2cf()
+	acf=open('aria2.conf','w')
+	acf.close()
+	acf=open('aria2.conf','a')
+	acf.write('# sample configuration file of aria2c\n')
+	acf.close()
 
 #Create configuration of aria2bt-tools
 ClearScreen()	
@@ -176,31 +171,27 @@ PauseScreen()
 
 #Apply configuration to 'a2conf.py' file
 os.remove("a2conf.py")
-def createaria2btcf():
-	abcf=open('a2conf.py','w')
-	abcf.close()
-def writearia2btcf():
-	abcf=open('a2conf.py','a')
-	abcf.write('#Default aria2 python-script config\n')
-	abcf.write('\n')
-	#abcf.write('DiscFiles="C:" # Only for Windows\n')
-	abcf.write('TorrentFolder="'+TorrentFolderInput+'"\n')
-	abcf.write('TorrentFiles="'+TorrentFilesInput+'"\n')
-	abcf.write('CaCertificateFile="'+CaCertificateFileInput+'"\n')
-	abcf.write('MaxSpeedDownload="'+MaxSpeedDownloadInput+'"\n')
-	abcf.write('MaxSpeedUpload="'+MaxSpeedUploadInput+'"\n')
-	abcf.write('BtMaxPeers="'+BtMaxPeersInput+'"\n')
-	abcf.write('MaxDownloads="'+MaxDownloadsInput+'"\n')
-	abcf.write('Encryptation="'+EncryptationInput+'"\n')
-	abcf.write('Rpc="'+RpcInput+'"\n')
-	abcf.write('RpcPort="'+RpcPortInput+'"\n')
-	abcf.write('Seeding="'+SeedingInput+'"\n')
-	abcf.write('SeedRatio="'+SeedRatioInput+'"\n')
-	abcf.write('aria2Debug="'+aria2DebugInput+'"\n')
-	abcf.write('DebugLevel="'+DebugLevelInput+'"\n')
-	abcf.write('FileAllocation="'+FileAllocationInput+'"\n')
-	abcf.write('CaCertificate="'+CaCertificateInput+'"\n')
-	abcf.close()
 #Create configuration file
-createaria2btcf()
-writearia2btcf()
+abcf=open('a2conf.py','w')
+abcf.close()
+abcf=open('a2conf.py','a')
+abcf.write('#Default aria2 python-script config\n')
+abcf.write('\n')
+#abcf.write('DiscFiles="C:" # Only for Windows\n')
+abcf.write('TorrentFolder="'+TorrentFolderInput+'"\n')
+abcf.write('TorrentFiles="'+TorrentFilesInput+'"\n')
+abcf.write('CaCertificateFile="'+CaCertificateFileInput+'"\n')
+abcf.write('MaxSpeedDownload="'+MaxSpeedDownloadInput+'"\n')
+abcf.write('MaxSpeedUpload="'+MaxSpeedUploadInput+'"\n')
+abcf.write('BtMaxPeers="'+BtMaxPeersInput+'"\n')
+abcf.write('MaxDownloads="'+MaxDownloadsInput+'"\n')
+abcf.write('Encryptation="'+EncryptationInput+'"\n')
+abcf.write('Rpc="'+RpcInput+'"\n')
+abcf.write('RpcPort="'+RpcPortInput+'"\n')
+abcf.write('Seeding="'+SeedingInput+'"\n')
+abcf.write('SeedRatio="'+SeedRatioInput+'"\n')
+abcf.write('aria2Debug="'+aria2DebugInput+'"\n')
+abcf.write('DebugLevel="'+DebugLevelInput+'"\n')
+abcf.write('FileAllocation="'+FileAllocationInput+'"\n')
+abcf.write('CaCertificate="'+CaCertificateInput+'"\n')
+abcf.close()
