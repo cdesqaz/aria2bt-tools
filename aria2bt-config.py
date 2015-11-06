@@ -74,8 +74,24 @@ ClearScreen()
 print ("")
 print ("** aria2bt-config.py v"+version+" **")
 print ("")
-TorrentFolderInput=input("Path of Torrents folder (no spaces): ")
-TorrentFilesInput=input("Path of *.torrent files (folder) (no spaces): ")
+TorrentFolderWhile = 1
+while TorrentFolderWhile <= 2:
+	TorrentFolderInput=input("Path of downloads folder (no spaces): ")
+	if os.path.exists(TorrentFolderInput):
+		TorrentFolderWhile += 2
+	else:
+		print ("")
+		print ("'"+TorrentFolderInput+"' folder doesn't exist")
+		print ("")
+TorrentFilesWhile = 1
+while TorrentFilesWhile <= 2:
+	TorrentFilesInput=input("Path to load *.torrent files (folder) (no spaces): ")
+	if os.path.exists(TorrentFilesInput):
+		TorrentFilesWhile += 2
+	else:
+		print ("")
+		print ("'"+TorrentFilesInput+"' folder doesn't exist")
+		print ("")
 CaCertificateFileInput=input("Path of CA-Certificates file (no spaces): ")
 MaxSpeedDownloadNumber=input("[Default: 300K] Set the maximum download speed: ")
 if MaxSpeedDownloadNumber != "":
