@@ -186,7 +186,8 @@ print ("- Press ENTER to apply or Ctrl+C to cancel")
 PauseScreen()
 
 #Apply configuration to 'a2conf.py' file
-os.remove("a2conf.py")
+if os.path.isfile("a2conf.py"):
+	os.remove("a2conf.py")
 #Create configuration file
 abcf=open('a2conf.py','w')
 abcf.close()
