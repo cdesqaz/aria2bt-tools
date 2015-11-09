@@ -19,8 +19,6 @@ HOW TO INSTALL
      $ git clone https://github.com/clamsawd/aria2bt-tools
      $ cd aria2bt-tools
      # make
-     $ mkdir $HOME/.aria2/
-     $ cp a2conf.py.Unix $HOME/.aria2/a2conf.py
      
    Note: You must install git & aria2 previously.
 
@@ -32,8 +30,6 @@ HOW TO INSTALL
      $ git clone https://github.com/clamsawd/aria2bt-tools
      $ cd aria2bt-tools
      # make -f makefile.osx
-     $ mkdir $HOME/.aria2/
-     $ cp a2conf.py.Unix $HOME/.aria2/a2conf.py
      
    Note: You must install git & aria2 previously.
      
@@ -44,8 +40,8 @@ HOW TO INSTALL
       - Download https://github.com/clamsawd/aria2bt-tools/archive/master.zip
       - Unzip the package in your system. For example in C:\Program Files\.
       - Add the folder to PATH variable.
-      - Copy 'a2conf.py.Windows' to %USERPROFILE%\.aria2\a2conf.py:
-      
-       C:\PATH\> mkdir %USERPROFILE%\.aria2
-       C:\PATH\> rename a2conf.py.Windows a2conf.py
-       C:\PATH\> copy /Y a2conf.py %USERPROFILE%\.aria2
+
+Note: You can download aria2 from the following URLS:
+
+      * https://github.com/clamsawd/aria2-static-builds/releases
+      * https://github.com/tatsuhiro-t/aria2/releases
