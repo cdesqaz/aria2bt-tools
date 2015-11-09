@@ -1,0 +1,22 @@
+aria2bt-tools - How to use
+==========================
+
+STEPS TO USE:
+-------------
+
+  * Create a valid configuration file:
+  
+    - First, you must create the configuration file needed to run 'aria2bt-tools' correctly. 
+      To do this, run the tool called 'aria2bt-config.py':
+      
+      $ ./aria2bt-config.py
+
+   * Run the daemon:
+   
+    - When are configured the necessary data, you can run the tool called 'aria2bt-main.py':
+      
+      $ ./aria2bt-main.py
+      
+    - If you want run aria2bt-tools without menu you can run the 'aria2bt-run.py' tool:
+    
+      $ ./aria2bt-run.py
