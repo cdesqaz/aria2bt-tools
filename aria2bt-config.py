@@ -192,7 +192,7 @@ if os.path.isfile("aria2bt.conf"):
 abcf=open('aria2bt.conf','w')
 abcf.close()
 abcf=open('aria2bt.conf','a')
-abcf.write('#sample configuration file of aria2bt\n')
+abcf.write('# sample configuration file of aria2bt\n')
 abcf.write('\n')
 #abcf.write('DiscFiles="C:" # Only for Windows\n')
 abcf.write('TorrentFolder="'+TorrentFolderInput+'"\n')

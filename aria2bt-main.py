@@ -41,10 +41,12 @@ def ClearScreen():
 if os.name == "posix":
 	os.chdir(os.environ["HOME"])
 	ConfigFile=os.environ["HOME"]+"/.aria2/aria2bt.conf"
+	FilesTorrent="/*.torrent"
 	print ("POSIX detected")
 elif os.name == "nt":
 	os.chdir(os.environ["USERPROFILE"])
 	ConfigFile=os.environ["USERPROFILE"]+"\\.aria2\\aria2bt.conf"
+	FilesTorrent="\\*.torrent"
 	print ("Windows detected")
 
 if not os.path.exists(".aria2"):
@@ -132,10 +134,7 @@ while MainMenu <= 2:
 	print (" * Config.file: "+ConfigFile)
 	print ("")
 	print (" * Download directory: "+TorrentFolder)
-	if os.name == "posix":
-		print (" * Torrents directory: "+TorrentFiles+"/*.torrent")
-	elif os.name == "nt":
-		print (" * Torrents directory: "+TorrentFiles+"\*.torrent")
+	print (" * Torrents directory: "+TorrentFiles+FilesTorrent)
 	print (" * Download speed: "+MaxSpeedDownload+" | Upload speed: "+MaxSpeedUpload)
 	print (" * Encryption: "+Encryptation+" | RPC: "+Rpc+" (Port: "+RpcPort+")")
 	print (" * Max.peers: "+BtMaxPeers+" | Max.downloads: "+MaxDownloads)
