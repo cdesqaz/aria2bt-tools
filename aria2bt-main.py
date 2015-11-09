@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 06-11-2015                                      |
+# Last update: 09-11-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
@@ -40,9 +40,11 @@ def ClearScreen():
 #Detect system & PATH of user folder
 if os.name == "posix":
 	os.chdir(os.environ["HOME"])
+	ConfigFile=os.environ["HOME"]+"/.aria2/aria2bt.conf"
 	print ("POSIX detected")
 elif os.name == "nt":
 	os.chdir(os.environ["USERPROFILE"])
+	ConfigFile=os.environ["USERPROFILE"]+"\\.aria2\\aria2bt.conf"
 	print ("Windows detected")
 
 if not os.path.exists(".aria2"):
@@ -62,9 +64,9 @@ else:
 	acf.write('# sample configuration file of aria2c\n')
 	acf.close()
 
-#Check if exists 'a2conf.py'
-if os.path.isfile("a2conf.py"):
-	print ("a2conf.py exists")
+#Check if exists 'aria2bt.conf'
+if os.path.isfile("aria2bt.conf"):
+	print ("aria2bt.conf exists")
 else:
 	ClearScreen()
 	print ("")
@@ -74,8 +76,8 @@ else:
 	print ("")
 	exit(0)
 
-#Import variables from a2conf.py
-exec(open("a2conf.py").read())
+#Import variables from aria2bt.conf
+exec(open("aria2bt.conf").read())
 
 #Define aria2c variables
 SpeedOptions="--max-overall-download-limit="+MaxSpeedDownload+" --max-overall-upload-limit="+MaxSpeedUpload
@@ -127,10 +129,7 @@ while MainMenu <= 2:
 	print ("")
 	print ("- aria2bt-main.py config:")
 	print ("")
-	if os.name == "posix":
-		print (" * Config.file: "+os.environ["HOME"]+"/.aria2/a2conf.py")
-	elif os.name == "nt":
-		print (" * Config.file: "+os.environ["USERPROFILE"]+"\.aria2\\a2conf.py")
+	print (" * Config.file: "+ConfigFile)
 	print ("")
 	print (" * Download directory: "+TorrentFolder)
 	if os.name == "posix":

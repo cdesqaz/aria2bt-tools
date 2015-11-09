@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 06-11-2015                                          |
+# Last update: 09-11-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
@@ -185,14 +185,14 @@ print ("")
 print ("- Press ENTER to apply or Ctrl+C to cancel")
 PauseScreen()
 
-#Apply configuration to 'a2conf.py' file
-if os.path.isfile("a2conf.py"):
-	os.remove("a2conf.py")
+#Apply configuration to 'aria2bt.conf' file
+if os.path.isfile("aria2bt.conf"):
+	os.remove("aria2bt.conf")
 #Create configuration file
-abcf=open('a2conf.py','w')
+abcf=open('aria2bt.conf','w')
 abcf.close()
-abcf=open('a2conf.py','a')
-abcf.write('#Default aria2 python-script config\n')
+abcf=open('aria2bt.conf','a')
+abcf.write('#sample configuration file of aria2bt\n')
 abcf.write('\n')
 #abcf.write('DiscFiles="C:" # Only for Windows\n')
 abcf.write('TorrentFolder="'+TorrentFolderInput+'"\n')
