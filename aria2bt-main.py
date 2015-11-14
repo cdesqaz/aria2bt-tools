@@ -18,6 +18,7 @@ version="1.0.3"
 import subprocess
 import os
 import sys
+import shutil
 
 #Check if your system use Python 3.x
 if sys.version_info<(3,0):
