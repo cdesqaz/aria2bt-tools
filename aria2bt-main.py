@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 09-11-2015                                      |
+# Last update: 14-11-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
@@ -80,6 +80,36 @@ else:
 
 #Import variables from aria2bt.conf
 exec(open("aria2bt.conf").read())
+
+#Check input files
+try:
+	if os.path.isfile(sys.argv[1]):
+		ClearScreen()
+		print ("")
+		print ("** aria2bt-tools (main) v"+version+" **")
+		print ("")
+		print ("* File detected: "+sys.argv[1])
+		print ("")
+		InputFile=input("- Do you want to copy file to "+TorrentFiles+" directory (y/n): ")
+		if InputFile == "n":
+			print ("")
+			print ("Exiting...")
+		else:
+			try:
+				shutil.copy(sys.argv[1], TorrentFiles)
+				print ("")
+				print ("File copied successfully")
+				print ("")
+				PauseReturn=input("Press ENTER to continue ")
+				print ("Loading...")
+			except:
+				print ("")
+				print ("Failed to copy the file")
+				print ("")
+				PauseReturn=input("Press ENTER to continue ")
+				print ("Loading...")
+except:
+	print ("No input files")
 
 #Define aria2c variables
 SpeedOptions="--max-overall-download-limit="+MaxSpeedDownload+" --max-overall-upload-limit="+MaxSpeedUpload
