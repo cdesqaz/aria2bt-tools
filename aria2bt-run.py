@@ -6,13 +6,13 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 09-11-2015                                          |
+# Last update: 15-11-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
 # Compatible with Python 3.x                                       |
 # ------------------------------------------------------------------
-version="1.0.3"
+version="1.1"
 
 #Import python-modules
 import subprocess

@@ -6,13 +6,13 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 14-11-2015                                      |
+# Last update: 15-11-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
 # Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
-version="1.0.3"
+version="1.1"
 
 #Import python-modules
 import subprocess
@@ -158,9 +158,9 @@ MainMenu = 1
 while MainMenu <= 2:
 	ClearScreen()
 	print ("")
-	print ("** aria2bt-main.py bittorrent v"+version+" **")
+	print ("** aria2bt-tools (main) v"+version+" **")
 	print ("")
-	print ("- aria2bt-main.py config:")
+	print ("- aria2bt-tools config:")
 	print ("")
 	print (" * Config.file: "+ConfigFile)
 	print ("")
