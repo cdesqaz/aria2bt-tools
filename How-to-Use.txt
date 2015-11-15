@@ -20,3 +20,15 @@ STEPS TO USE:
     - If you want run aria2bt-tools without menu you can run the 'aria2bt-run.py' tool:
     
       $ ./aria2bt-run.py
+
+HELP & ADVICE:
+--------------
+
+  - You can add *.torrent files directly to 'TorrentFiles' directory using 'aria2bt-main.py'.
+    To do it, use the following command:
+    
+    $ ./aria2bt-main.py [FULL-PATH]/file.torrent
+    
+   - When you use 'aria2bt-config.py' in Windows. You must type the directories with '\\'
+     instead of '\'. For Example: 'C:\\Users\\You\\Downloads'.
+     
