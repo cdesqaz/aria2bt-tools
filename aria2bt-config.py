@@ -37,13 +37,6 @@ def ClearScreen():
 	else:
 		print ("Error: Unable clear screen")
 
-#Function to pause screen
-def PauseScreen():
-	if os.name == "posix":
-		os.system("read pause")
-	elif os.name == "nt":
-		os.system("pause > nul")
-
 #Detect system & PATH of user folder
 if os.name == "posix":
 	os.chdir(os.environ["HOME"])
@@ -182,8 +175,7 @@ print ('DebugLevel="'+DebugLevelInput+'"')
 print ('FileAllocation="'+FileAllocationInput+'"')
 print ('CaCertificate="'+CaCertificateInput+'"')
 print ("")
-print ("- Press ENTER to apply or Ctrl+C to cancel")
-PauseScreen()
+PauseExit=input("- Press ENTER to apply or Ctrl+C to cancel ")
 
 #Apply configuration to 'aria2bt.conf' file
 if os.path.isfile("aria2bt.conf"):
