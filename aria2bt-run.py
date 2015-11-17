@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 15-11-2015                                          |
+# Last update: 17-11-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
@@ -24,7 +24,7 @@ if sys.version_info<(3,0):
 	print ("")
 	print ("You need python 3.x to run this program.")
 	print ("")
-	exit(1)
+	exit()
 
 #Function to clear screen
 def ClearScreen():
@@ -72,7 +72,9 @@ else:
 	print ("")
 	print ("You can create it if you run 'aria2bt-config.py'")
 	print ("")
-	exit(0)
+	PauseExit=input("Press ENTER to exit ")
+	print ("Exiting...")
+	exit()
 
 #Import variables from aria2bt.conf
 exec(open("aria2bt.conf").read())
@@ -116,7 +118,7 @@ except:
 	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
 	print ("")
 	PauseExit=input("Press ENTER to exit ")
-	exit(1)
+	exit()
 
 #Run aria2c
 ClearScreen()
