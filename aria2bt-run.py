@@ -6,13 +6,13 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 17-11-2015                                          |
+# Last update: 23-11-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
 # Compatible with Python 3.x                                       |
 # ------------------------------------------------------------------
-version="1.1"
+version="1.2"
 
 #Import python-modules
 import subprocess
@@ -122,6 +122,8 @@ except:
 
 #Run aria2c
 ClearScreen()
+print ("")
+print ("** aria2bt-tools (run) v"+version+" **")
 print ("")
 print ("Running aria2c.... (Ctrl + C to stop)")
 if os.name == "posix":
