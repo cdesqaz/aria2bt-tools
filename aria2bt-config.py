@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 23-11-2015                                          |
+# Last update: 01-12-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
@@ -175,7 +175,7 @@ print ('DebugLevel="'+DebugLevelInput+'"')
 print ('FileAllocation="'+FileAllocationInput+'"')
 print ('CaCertificate="'+CaCertificateInput+'"')
 print ("")
-PauseExit=input("- Press ENTER to apply or Ctrl+C to cancel ")
+PauseExit=input("+ Press ENTER to apply or Ctrl+C to cancel ")
 
 #Apply configuration to 'aria2bt.conf' file
 if os.path.isfile("aria2bt.conf"):

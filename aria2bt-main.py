@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 23-11-2015                                      |
+# Last update: 01-12-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
@@ -73,11 +73,11 @@ if os.path.isfile("aria2bt.conf"):
 else:
 	ClearScreen()
 	print ("")
-	print ("The configuration file doesn't exist")
+	print ("* The configuration file doesn't exist")
 	print ("")
-	print ("You can create it if you run 'aria2bt-config.py'")
+	print ("* You can create it if you run 'aria2bt-config.py'")
 	print ("")
-	PauseReturn=input("Press ENTER to exit ")
+	PauseReturn=input("+ Press ENTER to exit ")
 	print ("Exiting...")
 	exit()
 
@@ -101,15 +101,15 @@ try:
 			try:
 				shutil.copy(sys.argv[1], TorrentFiles)
 				print ("")
-				print ("File copied successfully")
+				print ("* File copied successfully")
 				print ("")
-				PauseReturn=input("Press ENTER to continue ")
+				PauseReturn=input("+ Press ENTER to continue ")
 				print ("Loading...")
 			except:
 				print ("")
-				print ("Failed to copy the file")
+				print ("* Failed to copy the file")
 				print ("")
-				PauseReturn=input("Press ENTER to continue ")
+				PauseReturn=input("+ Press ENTER to continue ")
 				print ("Loading...")
 except:
 	print ("No input files")
@@ -146,13 +146,13 @@ try:
 except:
 	ClearScreen()
 	print ("")
-	print ("Error: 'aria2' is not installed!")
+	print ("* Error: 'aria2' is not installed!")
 	print ("")
-	print ("Builds:")
+	print ("* Builds:")
 	print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
 	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
 	print ("")
-	PauseExit=input("Press ENTER to exit ")
+	PauseExit=input("+ Press ENTER to exit ")
 	exit()
 
 #Show main menu
@@ -185,7 +185,7 @@ while MainMenu <= 2:
 		if os.name == "posix":
 			os.system("aria2c "+OtherOptions+" "+TorrentFiles+"/*.torrent "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			PauseReturn=input("Press ENTER to return ")
+			PauseReturn=input("+ Press ENTER to return ")
 			print ("Exiting...")
 		elif os.name == "nt":
 			#os.chdir(DiscFiles)
@@ -193,7 +193,7 @@ while MainMenu <= 2:
 			os.system('dir /B | find ".torrent" > aria2-list.txt')
 			os.system("aria2c "+OtherOptions+" -i aria2-list.txt "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			PauseReturn=input("Press ENTER to return ")
+			PauseReturn=input("+ Press ENTER to return ")
 			print ("Exiting...")
 	elif InputMenu == "l" or InputMenu == "2":
 		ClearScreen()
@@ -212,7 +212,7 @@ while MainMenu <= 2:
 		elif os.name == "nt":
 			os.system('dir /B '+TorrentFolder+' | find ".aria2"')
 		print ("")
-		PauseReturn=input("Press ENTER to return ")
+		PauseReturn=input("+ Press ENTER to return ")
 		print ("Exiting...")
 	elif InputMenu == "m" or InputMenu == "3":
 		ClearScreen()
@@ -224,7 +224,7 @@ while MainMenu <= 2:
 		print ("")
 		os.system("aria2c --bt-metadata-only=true --bt-save-metadata=true -d "+TorrentFiles+" "+MagnetLink)
 		print ("")
-		PauseReturn=input("Press ENTER to return ")
+		PauseReturn=input("+ Press ENTER to return ")
 		print ("Exiting...")
 	elif InputMenu == "u" or InputMenu == "4":
 		os.chdir(TorrentFiles)
@@ -254,7 +254,7 @@ while MainMenu <= 2:
 			print ("Running aria2c.... (Ctrl + C to stop)")
 			os.system("aria2c "+OtherOptions+" -i urls.txt "+AllOptions+" -d "+TorrentFolder)
 			print ("")
-			PauseReturn=input("Press ENTER to return ")
+			PauseReturn=input("+ Press ENTER to return ")
 		elif LoadUrls == "n":
 			print ("")
 			print ("Exiting...")
@@ -268,6 +268,6 @@ while MainMenu <= 2:
 	else:
 		ClearScreen()
 		print ("")
-		print ("Invalid Option")
+		print ("* Invalid Option")
 		print ("")
-		PauseReturn=input("Press ENTER to return ")
+		PauseReturn=input("+ Press ENTER to return ")

@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 23-11-2015                                          |
+# Last update: 01-12-2015                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
@@ -68,11 +68,11 @@ if os.path.isfile("aria2bt.conf"):
 else:
 	ClearScreen()
 	print ("")
-	print ("The configuration file doesn't exist")
+	print ("* The configuration file doesn't exist")
 	print ("")
-	print ("You can create it if you run 'aria2bt-config.py'")
+	print ("* You can create it if you run 'aria2bt-config.py'")
 	print ("")
-	PauseExit=input("Press ENTER to exit ")
+	PauseExit=input("+ Press ENTER to exit ")
 	print ("Exiting...")
 	exit()
 
@@ -111,13 +111,13 @@ try:
 except:
 	ClearScreen()
 	print ("")
-	print ("Error: 'aria2' is not installed!")
+	print ("* Error: 'aria2' is not installed!")
 	print ("")
-	print ("Builds:")
+	print ("* Builds:")
 	print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
 	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
 	print ("")
-	PauseExit=input("Press ENTER to exit ")
+	PauseExit=input("+ Press ENTER to exit ")
 	exit()
 
 #Run aria2c
@@ -129,7 +129,7 @@ print ("Running aria2c.... (Ctrl + C to stop)")
 if os.name == "posix":
 	os.system("aria2c "+OtherOptions+" "+TorrentFiles+"/*.torrent "+AllOptions+" -d "+TorrentFolder)
 	print ("")
-	PauseExit=input("Press ENTER to exit ")
+	PauseExit=input("+ Press ENTER to exit ")
 	print ("Exiting...")
 elif os.name == "nt":
 	#os.chdir(DiscFiles)
@@ -137,5 +137,5 @@ elif os.name == "nt":
 	os.system('dir /B | find ".torrent" > aria2-list.txt')
 	os.system("aria2c "+OtherOptions+" -i aria2-list.txt "+AllOptions+" -d "+TorrentFolder)
 	print ("")
-	PauseExit=input("Press ENTER to exit ")
+	PauseExit=input("+ Press ENTER to exit ")
 	print ("Exiting...")
