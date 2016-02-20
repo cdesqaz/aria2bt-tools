@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                |
 # Created by clamsawd (clamsawd@openmailbox.org)               |
 # Licensed by GPL v.3                                          |
-# Last update: 01-12-2015                                      |
+# Last update: 20-02-2015                                      |
 # Builds:                                                      |
 #   * https://github.com/clamsawd/aria2-static-builds/releases |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
@@ -120,7 +120,7 @@ PeerOptions="--bt-max-peers="+BtMaxPeers
 if CaCertificate == "no":
 	OtherOptions="-V -j " +MaxDownloads+" --file-allocation="+FileAllocation+" --auto-file-renaming=false --allow-overwrite=false"
 elif CaCertificate == "yes":
-	OtherOptions="-V -j "+Maxdownloads+" --file-allocation="+FileAllocation+" --auto-file-renaming=false --allow-overwrite=false --ca-certificate="+CaCertificateFile
+	OtherOptions="-V -j "+MaxDownloads+" --file-allocation="+FileAllocation+" --auto-file-renaming=false --allow-overwrite=false --ca-certificate="+CaCertificateFile
 if Encryptation == "no":
 	TorrentOptions="--bt-require-crypto=false"
 elif Encryptation == "yes":

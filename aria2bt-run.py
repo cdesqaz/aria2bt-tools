@@ -85,7 +85,7 @@ PeerOptions="--bt-max-peers="+BtMaxPeers
 if CaCertificate == "no":
 	OtherOptions="-V -j " +MaxDownloads+" --file-allocation="+FileAllocation+" --auto-file-renaming=false --allow-overwrite=false"
 elif CaCertificate == "yes":
-	OtherOptions="-V -j "+Maxdownloads+" --file-allocation="+FileAllocation+" --auto-file-renaming=false --allow-overwrite=false --ca-certificate="+CaCertificateFile
+	OtherOptions="-V -j "+MaxDownloads+" --file-allocation="+FileAllocation+" --auto-file-renaming=false --allow-overwrite=false --ca-certificate="+CaCertificateFile
 if Encryptation == "no":
 	TorrentOptions="--bt-require-crypto=false"
 elif Encryptation == "yes":
