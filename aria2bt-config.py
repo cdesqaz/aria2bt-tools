@@ -6,7 +6,7 @@
 # http://aria2.sourceforge.net/                                    |
 # Created by clamsawd (clamsawd@openmailbox.org)                   |
 # Licensed by GPL v.3                                              |
-# Last update: 01-12-2015                                          |
+# Last update: 20-02-2016                                          |
 # Builds:                                                          |
 #   * https://github.com/clamsawd/aria2-static-builds/releases     |
 #   * https://github.com/tatsuhiro-t/aria2/releases                |
@@ -67,6 +67,10 @@ ClearScreen()
 print ("")
 print ("** aria2bt-tools (config) v"+version+" **")
 print ("")
+if os.name == "nt":
+	print ("[WARNING] -> Use '\\\\' or '/' instead of '\\' to define directories!")
+	print ("[EXAMPLE] -> C:\\\\TORRENT\\\\Files")
+	print ("")
 TorrentFolderWhile = 1
 while TorrentFolderWhile <= 2:
 	TorrentFolderInput=input("Path of downloads folder (no spaces): ")
