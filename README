@@ -16,7 +16,7 @@ HOW TO INSTALL
 
    - Open the terminal and type the following comands:
    
-     $ git clone https://github.com/clamsawd/aria2bt-tools
+     $ git clone https://github.com/q3aql/aria2bt-tools
      $ cd aria2bt-tools
      # make
      
@@ -27,7 +27,7 @@ HOW TO INSTALL
  
      - Open the terminal and type the following comands:
      
-     $ git clone https://github.com/clamsawd/aria2bt-tools
+     $ git clone https://github.com/q3aql/aria2bt-tools
      $ cd aria2bt-tools
      # make -f makefile.osx
      
@@ -37,7 +37,7 @@ HOW TO INSTALL
  =========
  
       - Install Python 3.x from https://www.python.org/.
-      - Download https://github.com/clamsawd/aria2bt-tools/archive/master.zip
+      - Download https://github.com/q3aql/aria2bt-tools/archive/master.zip
       - Unzip the package in your system. For example in C:\Program Files\.
       - Add the folder to PATH variable.
       - Double click on 'install.cmd'.
@@ -49,5 +49,5 @@ HOW TO USE
 
 Note: You can download aria2 from the following URLS:
 
-      * https://github.com/clamsawd/aria2-static-builds/releases
+      * https://github.com/q3aql/aria2-static-builds/releases
       * https://github.com/tatsuhiro-t/aria2/releases
