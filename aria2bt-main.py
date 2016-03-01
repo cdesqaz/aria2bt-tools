@@ -4,11 +4,11 @@
 # --------------------------------------------------------------
 # aria2 python script for bittorrent downloads.                |
 # http://aria2.sourceforge.net/                                |
-# Created by clamsawd (clamsawd@openmailbox.org)               |
+# Created by q3aql (q3aql@openmailbox.org)                     |
 # Licensed by GPL v.3                                          |
-# Last update: 20-02-2016                                      |
+# Last update: 01-03-2016                                      |
 # Builds:                                                      |
-#   * https://github.com/clamsawd/aria2-static-builds/releases |
+#   * https://github.com/q3aql/aria2-static-builds/releases    |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
 # Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
@@ -149,7 +149,7 @@ except:
 	print ("* Error: 'aria2' is not installed!")
 	print ("")
 	print ("* Builds:")
-	print ("  * https://github.com/clamsawd/aria2-static-builds/releases")
+	print ("  * https://github.com/q3aql/aria2-static-builds/releases")
 	print ("  * https://github.com/tatsuhiro-t/aria2/releases")
 	print ("")
 	PauseExit=input("+ Press ENTER to exit ")
