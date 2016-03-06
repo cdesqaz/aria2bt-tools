@@ -6,13 +6,13 @@
 # http://aria2.sourceforge.net/                                |
 # Created by q3aql (q3aql@openmailbox.org)                     |
 # Licensed by GPL v.3                                          |
-# Last update: 01-03-2016                                      |
+# Last update: 06-03-2016                                      |
 # Builds:                                                      |
 #   * https://github.com/q3aql/aria2-static-builds/releases    |
 #   * https://github.com/tatsuhiro-t/aria2/releases            |
 # Compatible with Python 3.x                                   |
 # --------------------------------------------------------------
-version="1.2.1"
+version="1.2.2"
 
 #Import python-modules
 import subprocess
